@@ -14,7 +14,7 @@ public class DiningPhilosophers {
 		Philosopher p2 = new Philosopher(2, table, c2, c1);
 		Philosopher p3 = new Philosopher(3, table, c3, c2);
 		Philosopher p4 = new Philosopher(4, table, c4, c3);
-		
+	
 		p0.start();
 		p1.start();
 		p2.start();

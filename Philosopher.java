@@ -40,7 +40,12 @@ public class Philosopher extends Thread {
 			
 			// Let's try to get the left chopstick
 			System.out.println(getName()+" wants left chopstick");
-			left.take();
+			try {
+				left.take();
+			} catch (InterruptedException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			}
 			
 			// Tell the GUI that I took the left chopstick
 			table.takeChopstick(ID, left.getID());
@@ -55,7 +60,12 @@ public class Philosopher extends Thread {
 			
 			// Ok, enough etiquette nonesense, now I need my right chopstick
 			System.out.println(getName()+" wants right chopstick");
-			right.take();
+			try {
+				right.take();
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 
 			// Got it!
 			table.takeChopstick(ID, right.getID());
